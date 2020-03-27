@@ -1,2 +1,2 @@
 # HomeArtIdea
-nterior design studio
+Interior design studio

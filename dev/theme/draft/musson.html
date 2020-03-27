@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <base href="/">
+    <meta charset="[[++modx_charset]]">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="/pages/sport/themes/css/main.css">
+    <link rel="stylesheet" href="/themes/css/footer.css">
+    <link rel="stylesheet" href="/themes/css/jquery.mmenu.all.css">
+    <title>Спорткомплекс | ТРЦ МУССОН</title>
+</head>
+<body>
+
+<div>
+    <div class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-items">
+                    <div class="header-item">
+                        <ul class="header-menu">
+                            [[$header-links]]
+                        </ul>
+                        <div id="my-header" class="mh-head mh-size-2 Sticky">
+                        		   <span class="mh-btns-left">
+                        			  <a id="hamburger" href="#mmenu">
+                        			      <i class="fas fa-align-justify"></i>
+                        			 </a>
+                            	   </span>
+                            <span class="mh-text">Меню</span>
+                        </div>
+                        <div id="mmenu">
+                            <ul>
+                                [[$header-moblinks]]
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-item">
+                        <div class="header-logo">
+                            <a href="#"><img data-src="/pages/sport/themes/img/logo.png" alt="" class="lazyload"></a>
+                        </div>
+                    </div>
+                    <div class="header-item">
+                        <div class="header-right">
+                            <ul>
+                                <li>Режим работы <small>10:00 – 00:00</small>
+                                    [[$worktime-tpl]]</li>
+                                <li class="howget"><a href="/[[~26]]">как добраться</a></li>
+                                <li class="maps"><a href="/[[~66]]"><i class="fas fa-map-marker-alt"></i>Карта ТРЦ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom"></div>
+    </div>
+
+    <section class="slider">
+        {set $rows = json_decode($_modx->resource.sliderTV, true)}
+        {foreach $rows as $row}
+        <div class="item" style="background-image: url({$row.img});">
+            <div class="container">
+                <div class="slider-info">
+                    <h1>{$row.title}</h1>
+                    {if $row.desc == ''}
+                    <div class="slider-phone">
+                        <a href="tel:[[*pagephone]]"><i class="fas fa-phone"></i> [[*pagephone]]</a>
+                        <small>Администрация спорткомплекса</small>
+                    </div>
+                    {else}
+                    <p>{$row.desc}</p>
+                    {/if}
+                </div>
+            </div>
+        </div>
+        {/foreach}
+    </section>
+
+    <section class="usluga">
+        <div class="wrapper">
+            <div class="usluga-block">
+                <div class="container">
+                    <div class="usluga-items">
+                        <div class="usluga-item">
+                            <div class="usluga-thumb">
+                                <img data-src="/pages/sport/themes/img/usluga1.png" alt="" class="lazyload">
+                            </div>
+                            <div class="usluga_content">
+                                <b class="name">Дом спортивного клуба «Муссон»</b>
+                            </div>
+                            <div class="open-left yellow"></div>
+
+                        </div>
+
+                        <div class="usluga-item">
+                            <div class="usluga-thumb">
+                                <img data-src="/pages/sport/themes/img/usluga2.png" alt="" class="lazyload">
+                            </div>
+                            <div class="usluga_content">
+                                <b class="name">Секции для детей от 5 лет</b>
+                            </div>
+                            <div class="open-left yellow"></div>
+
+                        </div>
+
+                        <div class="usluga-item">
+                            <div class="usluga-thumb">
+                                <img data-src="/pages/sport/themes/img/usluga3.png" alt="" class="lazyload">
+                            </div>
+                            <div class="usluga_content">
+                                <b class="name">Площадки для 14 видов спорта</b>
+
+                            </div>
+                            <div class="open-left yellow"></div>
+
+                        </div>
+
+                        <div class="usluga-item">
+                            <div class="usluga-thumb">
+                                <img data-src="/pages/sport/themes/img/usluga4.png" alt="" class="lazyload">
+                            </div>
+                            <div class="usluga_content">
+                                <b class="name">Мероприятия Федерального масштаба</b>
+
+                            </div>
+                            <div class="open-left yellow"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-price">
+                <div class="container">
+                    <div class="row">
+                        <h3 class="pagetitle">Аренда спортивных залов</h3>
+
+                        <a href="#modal" class="btn button-price"> посмотреть стоимость <img data-src="/pages/bowling/themes/img/see.png" alt="" class="lazyload"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sport-block">
+                <div class="container">
+                    <div class="row">
+                        <h3 class="pagetitle">Виды спорта и секции</h3>
+
+                        <div class="sportbl">
+                            <div class="spleft speff" style="background-image:url(/pages/sport/themes/img/sport-bl-1.jpg)">
+                                <a href="[[~45]]">Открыт набор в секцию «баскетбол»</a>
+                            </div>
+                            {set $rows2 = json_decode($_modx->resource.volbl, true)}
+                            {foreach $rows2 as $row2}
+                            <div class="spcenter speff" style="background-image:url(/pages/sport/themes/img/sport-bl-2.jpg)">
+                                <a href="#volfancy" class="fancybox"></a>
+                                <p>{$row2.title}</p>
+                            </div>
+                            <div id="volfancy" style="display:none" class="fancybl">
+                                <b class="blockname">{$row2.title}</b>
+                                <p>{$row2.intotext}</p>
+                            </div>
+                            {/foreach}
+                            <div class="spright">
+                                {set $rows2 = json_decode($_modx->resource.gymbl, true)}
+                                {foreach $rows2 as $row2}
+                                <div class="sptop speff" style="background-image:url(/pages/sport/themes/img/sport-bl-3.jpg)">
+                                    <a href="#gymfancy" class="fancybox"></a>
+                                    <p>{$row2.title}</p>
+                                </div>
+                                <div id="gymfancy" style="display:none" class="fancybl">
+                                    <b class="blockname">{$row2.title}</b>
+                                    <p>{$row2.intotext}</p>
+                                </div>
+                                {/foreach}
+                                {set $rows2 = json_decode($_modx->resource.tennisbl, true)}
+                                {foreach $rows2 as $row2}
+                                <div class="spbot speff" style="background-image:url(/pages/sport/themes/img/sport-bl-4.jpg)">
+                                    <a href="#tennisfancy" class="fancybox"></a>
+                                    <p>{$row2.title}</p>
+                                </div>
+                                <div id="tennisfancy" style="display:none" class="fancybl">
+                                    <b class="blockname">{$row2.title}</b>
+                                    <p>{$row2.intotext}</p>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="company-gallery">
+                <h3 class="pagetitle">Галерея</h3>
+                <div class="container">
+                    <div class="company-items">
+                        {set $rows = json_decode($_modx->resource.gallerytv, true)}
+                        {foreach $rows as $row}
+                        <div class="company-item hoveff" style="background-image:url({$row.galimg})">
+                            <a href="{$row.galimg}" data-fancybox="gallery">
+                            </a>
+                        </div>
+                        {/foreach}
+                    </div>
+                    <div class="company-gallery-btn">
+                        <div class="container">
+                            <button class="gallery-button" style="display:none">посмотреть еще фото</button>
+                            <div class="gallery-social">
+                                <ul>
+                                    <li><a href="[[++vklink]]"><img data-src="/pages/bowling/themes/img/vk1.png" alt="" class="lazyload"></a></li>
+                                    <li><a href="[[++instlink]]"><img data-src="/pages/bowling/themes/img/inst1.png" alt="" class="lazyload"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+[[$footer]]
+
+
+<!--Modals-->
+<div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <div class="sportdesc">
+        [[*pricetablebl]]
+    </div>
+    <br>
+</div>
+
+
+<!-- Scripts -->
+{ignore}
+<script src="/pages/sport/themes/libs/jquery/jquery.min.js"></script>
+<script src="/themes/vendor/lazysizes/lazysizes.min.js" defer></script>
+<script src="/pages/sport/themes/js/popper.min.js" defer></script>
+<script src="/pages/sport/themes/libs/slick/slick.min.js" defer></script>
+<script src="/pages/sport/themes/libs/fancybox/jquery.fancybox.min.js" defer></script>
+<script src="/pages/sport/themes/libs/remodal/remodal.js" defer></script>
+<script src="/pages/sport/themes/js/common.js" defer></script>
+<script src="/themes/js/jquery.mmenu.all.js" defer></script>
+<script src="/pages/cinemamusson/themes/js/mobmenu.js" defer></script>
+
+{/ignore}
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Circe-Bold';
+  src: url('Circe-Bold.eot');
+  src: url('Circe-Bold.woff2') format('woff2'),
+       url('Circe-Bold.woff') format('woff'),
+       url('Circe-Bold.svg#Circe-Bold') format('svg'),
+       url('Circe-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#return-to-top {
+  z-index: 10;
+}
+.container {
+  padding: 0;
+}
+.bx-blue .btn.btn-default {
+  background-color: rgb(65, 184, 46);
+  border-color: rgb(65, 184, 46);
+}
+.bx-blue .btn.btn-default:hover {
+  background-color: #e1005d;
+  border-color: #e1005d;
+}
+
+.bx-soa-pp-company-graf-container {
+  background-color: transparent !important;
+}
+.bx-soa-pp-item-container .bx-soa-pp-company-smalltitle {
+  flex: 0 0 auto;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.bx-soa-item-img-block a {
+  display: block;
+  width: 100%;
+}
+.bx-soa-item-imgcontainer {
+  width: 100%;
+}
+
+.bx-soa-pp-company-image {
+  width: 100%;
+  height: 56px;
+}
+
+#return-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#return-to-top img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s;
+}
+#return-to-top:hover img {
+  transform: translateY(-10px);
+}
+
+.bx-soa-pp-item-container .bx-soa-pp-company-smalltitle {
+  text-align: center;
+  width: 100%;
+}
+.bx-soa-pp-item-container .bx-soa-pp-company-graf-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.bx-soa-pp-delivery-cost {
+  margin: 10px;
+}
+.bx-soa-pp-company-logo .bx-soa-pp-company-graf-container {
+  display: none;
+}
+#bx-soa-paysystem .bx-soa-pp-item-container .bx-soa-pp-company {
+  width: 100%;
+}
+#bx-soa-paysystem .bx-soa-pp-desc-container {
+  display: none;
+}
